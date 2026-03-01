@@ -11,17 +11,25 @@
     ./lima-init.nix
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   # Get image under 2GB for Github release.
   documentation.enable = false;
 
   # Give users in the `wheel` group additional rights when connecting to the Nix daemon
   # This simplifies remote deployment to the instance's nix store.
-  nix.settings.trusted-users = [ "@wheel" ];
+  nix = {
+    channel.enable = false;
+
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [
+        "flakes"
+        "nix-command"
+      ];
+      min-free = "8G";
+      max-free = "32G";
+      trusted-users = [ "@wheel" ];
+    };
+  };
 
   # Read Lima configuration at boot time and run the Lima guest agent
   services.lima.enable = true;
