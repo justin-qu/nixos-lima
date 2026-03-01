@@ -23,8 +23,6 @@ images:
     arch: aarch64
     digest: sha512:a5c81b5680d43ba5c92f21260628dc41709e9de4bcc8b06a234bbaa72f46a46d1a112428bcf3db6b64af2054795918b67f17600e9bc1a0c338eb5e7143d73109
 
-mountInotify: true
-
 mounts:
   - location: '~'
     writable: false
