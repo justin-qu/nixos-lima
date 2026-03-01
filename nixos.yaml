@@ -19,9 +19,9 @@
 #     arch: x86_64
 
 images:
-  - location: https://github.com/justin-qu/nixos-lima/releases/download/v1.0.2/nixos-determinate-v1.0.2-aarch64.qcow2
+  - location: https://github.com/justin-qu/nixos-lima/releases/download/v1.0.3/nixos-determinate-v1.0.3-aarch64.qcow2
     arch: aarch64
-    digest: sha512:3570af94a879fc69ce51d19a7c8dd1ce6fe046a8a719e65a80be8db16f6c110f57c77301c65e3540d94d57c9af75d8c7f98c206a191703a9ddf139d5bfcaa837
+    digest: sha512:3e559d59890095e3f5ee8c233471ec6f152d573b135d3ad9bdf76dd8c616ece29f4e7e6954c1b643ac95857374b21de9cf39eb42726f2962998e43894ce8db01
 
 mounts:
   - location: '~'

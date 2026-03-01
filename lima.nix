@@ -53,16 +53,24 @@
     };
   };
   fileSystems = {
-    "/".options = [
-      "discard"
-      "noatime"
-      "nodiratime"
-    ];
-    "/boot".options = [
-      "discard"
-      "noatime"
-      "umask=0077"
-    ];
+    "/boot" = {
+      device = lib.mkForce "/dev/vda1";
+      fsType = "vfat";
+      options = [
+        "discard"
+        "noatime"
+        "umask=0077"
+      ];
+    };
+    "/" = {
+      device = lib.mkForce "/dev/vda2";
+      fsType = "ext4";
+      options = [
+        "discard"
+        "noatime"
+        "nodiratime"
+      ];
+    };
   };
 
   # pkgs
