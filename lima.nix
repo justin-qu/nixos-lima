@@ -92,7 +92,7 @@
   system.stateVersion = "25.11";
 
   virtualisation.rosetta = {
-    enable = true;
+    enable = pkgs.stdenv.hostPlatform.isAarch64;
     mountTag = "vz-rosetta";
   };
 }
